@@ -1,21 +1,29 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header"
+import Home from "./components/Home";
+import Article from "./components/Article";
+import Saved from "./components/Saved";
+import Note from "./components/Note";
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+	render() {
+		return (
+			<div className="container">
+				<Header />
+				<Home>
+					<Article title="Sample Article" />
+					<Article title="Another Article" />
+					<Article title="Some More Articles" />
+					<Article title="One More Article" />
+				</Home>
+				<Saved>
+					<Article title="Saved Article Test" isSaved={true} dateSaved="9/21/2018">
+						<Note text="This is a note." />
+					</Article>
+				</Saved>
+			</div>
+		);
+	}
 }
 
 export default App;
